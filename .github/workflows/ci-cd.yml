@@ -25,5 +25,11 @@ jobs:
         run: |
           npm run build
 
-    # Burada istəyə bağlı olaraq deploy əlavə edə bilərsən
-    # Məsələn, GitHub Pages, Vercel, AWS S3 və s.
+      - name: Deploy to Linux server via SSH
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "build/*"
+          target: "/home/${{ secrets.SERVER_USER }}/task_frontend_deploy"
