@@ -1,0 +1,31 @@
+name: React CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        cd frontend
+        npm install
+
+    - name: Build React app
+      run: |
+        cd frontend
+        npm run build
+
+    # Burada istəyə bağlı olaraq deploy əlavə edə bilərsən
+    # Məsələn, GitHub Pages, Vercel, AWS S3 və s.
