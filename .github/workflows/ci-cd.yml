@@ -19,12 +19,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd frontend
+        cd task_front_deploy
         npm install
 
     - name: Build React app
       run: |
-        cd frontend
+        cd task_front_deploy
         npm run build
 
     # Burada istəyə bağlı olaraq deploy əlavə edə bilərsən
