@@ -9,23 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: |
-        cd task_front_deploy
-        npm install
+      - name: Install dependencies
+        run: |
+          npm install
 
-    - name: Build React app
-      run: |
-        cd task_front_deploy
-        npm run build
+      - name: Build React app
+        run: |
+          npm run build
 
     # Burada istəyə bağlı olaraq deploy əlavə edə bilərsən
     # Məsələn, GitHub Pages, Vercel, AWS S3 və s.

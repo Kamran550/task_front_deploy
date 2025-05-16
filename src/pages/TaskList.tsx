@@ -37,7 +37,7 @@ export default function TaskList() {
   return (
     <Box>
       <Typography variant="h4" gutterBottom>
-        Tasklar
+        Salamlarrrrr
       </Typography>
       {loading ? (
         <Typography>Yüklənir...</Typography>
